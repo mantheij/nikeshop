@@ -36,6 +36,14 @@ p {
     z-index: 0;
 }
 
+#nike {
+    scale: 4%;
+    position: absolute;
+    top: -110%;
+    left: -94%;
+}
+
+
 #info {
     position: absolute;
     top: 65%;
