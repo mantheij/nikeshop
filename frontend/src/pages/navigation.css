@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 80px;
+    background-color: transparent;
+    padding: 1em 0;
+    z-index: 1000;
+}
+
+.navigation-menu {
+    position: fixed;
+    left: 77%;
+    list-style-type: none;
+    font-size: x-small;
+    margin: 80px;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+    width: 15%;
+}
+
+.navigation-menu li {
+    margin: 0 1em;
+}
+
+.navigation-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navigation-menu a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-top: 60px; /* Adjust this value if the navbar height changes */
+}
+
+.store-menu {
+    position: fixed;
+    top: 12%;
+    left: 1%;
+    list-style-type: none;
+    font-size: x-small;
+    margin: 80px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.store-menu li {
+    margin: 0 0 1em 0;
+}
+
+.store-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.store-menu a:hover {
+    text-decoration: underline;
+}

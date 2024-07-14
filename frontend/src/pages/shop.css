@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    position: absolute;
+    top: 12%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 2.5em;
+    font-weight: 0;
+    z-index: 0;
+    text-shadow: 3px 3px 0 lightskyblue;
+}
+
+/*p {*/
+/*    position: absolute;*/
+/*    top: 90%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    margin-left: 10px;*/
+/*    color: #333;*/
+/*    font-size: 0.7em;*/
+/*    z-index: 0;*/
+/*}*/
+
+#nike {
+    scale: 4%;
+    position: absolute;
+    top: -110%;
+    left: -94%;
+}
+
+
+#info {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 10px;
+    color: #333;
+    font-size: 0.7em;
+    z-index: 0;
+}
+
+#af1 {
+    height: 100%;
+}
+
+canvas {
+    height: 100vh !important;
+    z-index: 2;
+}
