@@ -11,9 +11,10 @@ function Home() {
     return (
         <div>
 
-            <h1>THE NEW AIR FORCE 2</h1>
+            <h1>THE AIR FORCE 2 BY NIKE</h1>
+            {/*  <h1 id={"bgtext"}>NEW RELEASE</h1> */}
             <div id={"af1"}>
-                <Canvas camera={{position: [0, 0, 5], fov: 75}}>
+                <Canvas camera={{position: [0, 0, 5], fov: 75}} style={{zIndex: 0}}>
                     <ambientLight intensity={0.5}/>
                     <OrbitControls
                         enablePan={false}
@@ -31,11 +32,7 @@ function Home() {
                                     blur={1} far={10} resolution={256} color='#000000'/>
                 </Canvas>
                 <a id={"info"} href="/shop/men/shoes">MORE INFORMATION</a>
-                <p id={"bottomPanel"}>
-                    <a id={"imprint"} href="/imprint">IMPRINT</a>
-                    <a id={"support"} href="/support">CUSTOMER SUPPORT</a>
-                    <a id={"tos"} href="/tos">TERMS OF USE</a>
-                </p>
+
 
 
             </div>

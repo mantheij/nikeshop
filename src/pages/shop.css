@@ -25,16 +25,16 @@ h1 {
     text-shadow: 3px 3px 0 lightskyblue;
 }
 
-p {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-left: 10px;
-    color: #333;
-    font-size: 0.7em;
-    z-index: 0;
-}
+/*p {*/
+/*    position: absolute;*/
+/*    top: 90%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    margin-left: 10px;*/
+/*    color: #333;*/
+/*    font-size: 0.7em;*/
+/*    z-index: 0;*/
+/*}*/
 
 #nike {
     scale: 4%;

@@ -1,55 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.logo-container {
-
-    vertical-align: top;
-    horiz-align: left;
-}
-
-body {
+.body {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', sans-serif;
-
 }
 
 .navigation {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 80px;
     background-color: transparent;
     padding: 1em 0;
     z-index: 1000;
 }
 
 .navigation-menu {
+    position: fixed;
+    left: 77%;
     list-style-type: none;
     font-size: x-small;
     margin: 80px;
     padding: 0;
     display: flex;
     justify-content: end;
+    width: 15%
 }
 
 .navigation-menu li {
     margin: 0 1em;
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
 }
 
 .navigation-menu a {
-    animation-delay: 0.1s;
     color: black;
     text-decoration: none;
     font-size: 1.2em;
@@ -64,6 +46,9 @@ body {
 }
 
 .store-menu {
+    position: fixed;
+    top: 12%;
+    left: 1%;
     list-style-type: none;
     font-size: x-small;
     margin: 80px;
@@ -74,12 +59,10 @@ body {
 }
 
 .store-menu li {
-    animation: fadeIn 2s ease-out forwards;
     margin: 0 0 1em 0;
 }
 
 .store-menu a {
-    animation-delay: 0.1s;
     color: black;
     text-decoration: none;
     font-size: 1.2em;
@@ -87,9 +70,4 @@ body {
 
 .store-menu a:hover {
     text-decoration: underline;
-}
-
-
-
-#nike {
 }
