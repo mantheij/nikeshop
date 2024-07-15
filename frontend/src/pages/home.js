@@ -1,29 +1,43 @@
 import './home.css';
-import React, {Suspense} from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls, ContactShadows, Html, useProgress } from "@react-three/drei";
+import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
 import Airforce from '../assets/Airforce.jsx';
 
 function Home() {
+    const controlsRef = useRef();
+
+    useEffect(() => {
+        if (controlsRef.current) {
+            controlsRef.current.autoRotate = true;
+            controlsRef.current.autoRotateSpeed = 0.7;
+            controlsRef.current.target.set(0, 0, 0);
+            controlsRef.current.update();
+            controlsRef.current.object.position.set(5, 0, 0);
+            controlsRef.current.object.lookAt(controlsRef.current.target);
+        }
+    }, []);
+
     return (
         <div>
             <h1>THE AIR FORCE 2 BY NIKE</h1>
             <div id="af1">
-                <Canvas camera={{position: [0, 0, 5], fov: 75}} style={{zIndex: 0}}>
-                    <ambientLight color={'black'} intensity={1}/>
+                <Canvas camera={{ position: [5, 0, 0], fov: 75 }} style={{ zIndex: 0 }}>
+                    <ambientLight color={'black'} intensity={1} />
                     <OrbitControls
+                        ref={controlsRef}
                         enablePan={false}
                         enableZoom={false}
                         enableRotate={false}
                         autoRotate={true}
-                        autoRotateSpeed={0.8}
+                        rotateSpeed={0.8}
                         minDistance={0.3}
                         maxDistance={0.3}
                     />
-                    <Suspense>
-                        <Airforce/>
+                    <Suspense fallback={null}>
+                        <Airforce />
                     </Suspense>
-                    <Environment preset="sunset"/>
+                    <Environment preset="sunset" />
                     <ContactShadows
                         position={[0, -0.1, 0]}
                         rotation={[Math.PI / 10, 0, 0]}

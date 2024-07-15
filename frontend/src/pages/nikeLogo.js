@@ -6,7 +6,7 @@ function Navigation() {
 
     return (
         <nav className="navigation">
-                    <img src={NikeLogo} alt="Nike" />
+                    <img id={"nikeimg"} src={NikeLogo} alt="Nike" />
 
         </nav>
     );

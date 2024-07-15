@@ -12,10 +12,10 @@ function Navigation() {
             </ul>
             <ul className={"store-menu"}>
                 <li><a href="/">HOME</a></li>
-                <li><a href="/shop/">ALL ITEMS</a></li>
+                <li><a href="/shop/all">ALL ITEMS</a></li>
                 <li><a href="/shop/men">MEN</a></li>
-                <li><a href="/shop/men">WOMEN</a></li>
-                <li><a href="/shop/men">KIDS</a></li>
+                <li><a href="/shop/women">WOMEN</a></li>
+                <li><a href="/shop/kids">KIDS</a></li>
             </ul>
         </nav>
     );
