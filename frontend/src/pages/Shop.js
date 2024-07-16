@@ -27,7 +27,7 @@ function Shop() {
 
     return (
         <div className="shop-container">
-            <h1>Product Images</h1>
+            <h1>ALL ITEMS</h1>
             <div className="grid-container">
                 {products.length > 0 ? (
                     products.map(product => (
