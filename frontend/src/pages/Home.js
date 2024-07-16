@@ -37,6 +37,7 @@ function Home() {
                             ref={controlsRef}
                             enablePan={false}
                             enableZoom={false}
+                            enableRotate={false}
                             autoRotate={true}
                             rotateSpeed={0.7}
                             minDistance={0.3}
@@ -57,7 +58,7 @@ function Home() {
                             color="#000000"
                         />
                     </Canvas>
-                    <a id="info" href="/shop/men/shoes">MORE INFORMATION</a>
+                    <a id="info" href="/products/1">MORE INFORMATION</a>
                 </div>
             </div>
             {loading && <Loading />}
