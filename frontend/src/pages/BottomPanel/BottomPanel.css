@@ -1,0 +1,26 @@
+.bottom-panel-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white; /* oder eine andere Farbe nach Wahl */
+    padding: 10px 0;
+    z-index: 100;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-panel-links {
+    font-size: 10px;
+    text-align: center;
+}
+
+.bottom-panel-links a {
+    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.bottom-panel-links a:hover {
+    text-decoration: underline;
+}

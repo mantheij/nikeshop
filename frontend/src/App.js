@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navigation from './pages/Navigation';
-import NikeLogo from './pages/NikeLogo';
+import Navigation from './pages/SideNavigations/Navigation';
+import NikeLogo from './pages/SideNavigations/Navigation2';
 import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ShopMen from './pages/ShopMen';
-import ShopWomen from './pages/ShopWomen';
-import ShopKids from './pages/ShopKids';
-import Imprint from './pages/bottomPanel/imprint';
-import BottomPanel from './pages/bottomPanel/bottomPanel';
-import Support from "./pages/bottomPanel/support";
-import Tos from "./pages/bottomPanel/tos";
-import Product from "./pages/Product";
+import ShopAll from './pages/Shop/ShopAll';
+import ShopMen from './pages/Shop/ShopMen';
+import ShopWomen from './pages/Shop/ShopWomen';
+import ShopKids from './pages/Shop/ShopKids';
+import Imprint from './pages/BottomPanel/imprint';
+import BottomPanel from './pages/BottomPanel/bottomPanel';
+import Support from "./pages/BottomPanel/support";
+import Tos from "./pages/BottomPanel/tos";
+import Product from "./pages/Shop/Product";
 
 
 
@@ -29,7 +29,7 @@ function App() {
                     <Route path="/imprint" element={<Imprint />} />
                     <Route path="/support" element={<Support />} />
                     <Route path="/tos" element={<Tos />} />
-                    <Route path="/shop/all" element={<Shop />} />
+                    <Route path="/shop/all" element={<ShopAll />} />
                     <Route path="/shop/men" element={<ShopMen />} />
                     <Route path="/shop/women" element={<ShopWomen />} />
                     <Route path="/shop/kids" element={<ShopKids />} />

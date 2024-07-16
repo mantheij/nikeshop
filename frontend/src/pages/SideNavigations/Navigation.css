@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+#nike-container {
+    position: fixed;
+    top: 12%;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+#nikeimg {
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    max-width: 120px;
+    margin-bottom: 20px; /* Abstand zwischen Logo und Store-Menü */
+    margin-left: 30px;
+}
+
+.invisible-button {
+    position: absolute;
+    top: 80px; /* Dies könnte entfernt werden, da der Button jetzt relativ positioniert wird */
+    left: 80px; /* Dies könnte entfernt werden, da der Button jetzt relativ positioniert wird */
+    width: 120px; /* gleiche Breite wie max-width des Bildes */
+    height: 100px; /* gleiche Höhe wie max-height des Bildes */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.navigation {
+    position: fixed;
+    top: 8%;
+    width: 100%;
+    background-color: transparent;
+    padding: 1em 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navigation-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-size: x-small;
+    left: 77%;
+    position: fixed;
+    width: 15%;
+    justify-content: flex-end;
+}
+
+.navigation-menu li {
+    white-space: nowrap;
+    margin: 0 1em;
+}
+
+.navigation-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navigation-menu a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-top: 60px; /* Passe diesen Wert an, wenn sich die Navbar-Höhe ändert */
+}
+
+.store-menu {
+    list-style-type: none;
+    font-size: x-small;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.store-menu li {
+    margin: 0 0 1em 0;
+}
+
+.store-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.store-menu a:hover {
+    text-decoration: underline;
+}
+
+.search-input {
+    padding: 5px;
+    width: 200px; /* Feste Breite für das Suchfeld */
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    vertical-align: middle; /* Vertikale Ausrichtung */
+    line-height: normal; /* Sicherstellen, dass die Höhe des Suchfeldes nicht verändert wird */
+    font-size: 1.2em; /* Schriftgröße anpassen */
+}

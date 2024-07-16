@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './ProductGrid.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import ReactSearchBox from 'react-search-box';
 
 function ProductGrid({ filterFn, title }) {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [error, setError] = useState(null);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getData = async () => {
         try {
@@ -34,11 +33,22 @@ function ProductGrid({ filterFn, title }) {
     }, []);
 
     useEffect(() => {
-        const results = products.filter(product =>
-            product.name.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        setFilteredProducts(results);
-    }, [searchQuery, products]);
+        const handleSearch = (e) => {
+            const value = e.detail.toLowerCase();
+            setSearchTerm(value);
+
+            const filtered = products.filter(product =>
+                product.name.toLowerCase().includes(value)
+            );
+            setFilteredProducts(filtered);
+        };
+
+        window.addEventListener('search', handleSearch);
+
+        return () => {
+            window.removeEventListener('search', handleSearch);
+        };
+    }, [products]);
 
     if (error) {
         return <div id="error">Error: {error}</div>;
@@ -47,15 +57,7 @@ function ProductGrid({ filterFn, title }) {
     return (
         <div className="shop-container">
             <h1>{title}</h1>
-            <div className="search-container">
-                <input
-                    type="text"
-                    placeholder="SEARCH"
-                    value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
-                    className="search-box"
-                />
-            </div>
+
             <div className="grid-container">
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map(product => (
