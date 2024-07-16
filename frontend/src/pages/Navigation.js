@@ -6,7 +6,6 @@ function Navigation() {
     return (
         <nav className="navigation">
             <ul className="navigation-menu">
-            <li><a href="/">SEARCH</a></li>
                 <li><a href="/signin">SIGN IN</a></li>
                 <li><a href="/cart">CART</a></li>
             </ul>

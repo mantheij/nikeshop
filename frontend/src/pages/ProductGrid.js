@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import './Shop.css';
+import './ProductGrid.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import ReactSearchBox from 'react-search-box';
 
 function ProductGrid({ filterFn, title }) {
     const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const [error, setError] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     const getData = async () => {
         try {
             const response = await axios.get('http://localhost:5000/products');
-            const filteredProducts = response.data
+            const fetchedProducts = response.data
                 .filter(filterFn)
                 .map(product => ({
                     ...product,
@@ -18,7 +21,8 @@ function ProductGrid({ filterFn, title }) {
                 }))
                 .sort((a, b) => a.category_id - b.category_id);
 
-            setProducts(filteredProducts);
+            setProducts(fetchedProducts);
+            setFilteredProducts(fetchedProducts);
         } catch (error) {
             console.error('Error fetching data:', error);
             setError('Error fetching data');
@@ -29,6 +33,13 @@ function ProductGrid({ filterFn, title }) {
         getData();
     }, []);
 
+    useEffect(() => {
+        const results = products.filter(product =>
+            product.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setFilteredProducts(results);
+    }, [searchQuery, products]);
+
     if (error) {
         return <div id="error">Error: {error}</div>;
     }
@@ -36,9 +47,18 @@ function ProductGrid({ filterFn, title }) {
     return (
         <div className="shop-container">
             <h1>{title}</h1>
+            <div className="search-container">
+                <input
+                    type="text"
+                    placeholder="SEARCH"
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                    className="search-box"
+                />
+            </div>
             <div className="grid-container">
-                {products.length > 0 ? (
-                    products.map(product => (
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map(product => (
                         <div key={product.product_id} className="grid-item">
                             <Link to={`/products/${product.product_id}`}>
                                 <img
@@ -47,6 +67,8 @@ function ProductGrid({ filterFn, title }) {
                                     style={{ width: '100%', height: 'auto' }}
                                 />
                             </Link>
+                            <p style={{ marginBottom: '0' }}>{product.name}</p>
+                            <p style={{ fontSize: '85%', marginTop: '2px' }}>{product.price}$</p>
                         </div>
                     ))
                 ) : (
