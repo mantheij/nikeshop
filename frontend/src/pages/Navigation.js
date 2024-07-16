@@ -1,5 +1,5 @@
 import React from 'react';
-import './navigation.css';
+import './Navigation.css';
 import NikeLogo from "../assets/Nike-Logo.png";
 
 function Navigation() {

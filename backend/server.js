@@ -64,32 +64,6 @@ app.get('/products/:id', async (req, res) => {
     }
 });
 
-// Get all product images
-app.get('/product_images', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM product_images');
-        res.json(result.rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
-
-// Get product image by ID
-app.get('/product_images/:id', async (req, res) => {
-    const { id } = req.params;
-    try {
-        const result = await pool.query('SELECT * FROM product_images WHERE image_id = $1', [id]);
-        if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Product image not found' });
-        }
-        res.json(result.rows[0]);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
-
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

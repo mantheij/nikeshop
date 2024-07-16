@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navigation from './pages/navigation';
-import NikeLogo from './pages/nikeLogo';
-import Home from './pages/home';
-import Shop from './pages/shop';
+import Navigation from './pages/Navigation';
+import NikeLogo from './pages/NikeLogo';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
 import Imprint from './pages/bottomPanel/imprint';
 import BottomPanel from './pages/bottomPanel/bottomPanel';
 import Support from "./pages/bottomPanel/support";
 import Tos from "./pages/bottomPanel/tos";
+import Product from "./pages/Product";
 
 
 
@@ -17,7 +18,6 @@ function App() {
     return (
         <Router>
             <div className="App">
-                {/* Navigation on the borders*/}
                 <BottomPanel />
                 <NikeLogo />
                 <Navigation />
@@ -27,6 +27,7 @@ function App() {
                     <Route path="/support" element={<Support />} />
                     <Route path="/tos" element={<Tos />} />
                     <Route path="/shop/all" element={<Shop />} />
+                    <Route path="/products/:id" element={<Product />} />
                 </Routes>
             </div>
         </Router>

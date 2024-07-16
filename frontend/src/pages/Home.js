@@ -1,4 +1,4 @@
-import './home.css';
+import './Home.css';
 import Loading from '../Loading.jsx';
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas } from '@react-three/fiber';
