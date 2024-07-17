@@ -23,7 +23,7 @@ function Navigation2() {
                     </li>
                 )}
                 <li><a href="/signin">SIGN IN</a></li>
-                <li><a href="/cart">CART</a></li>
+                <li><a href="/Cart/Cart">CART</a></li>
             </ul>
         </nav>
     );

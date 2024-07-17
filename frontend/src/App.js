@@ -13,31 +13,34 @@ import BottomPanel from './pages/BottomPanel/bottomPanel';
 import Support from "./pages/BottomPanel/support";
 import Tos from "./pages/BottomPanel/tos";
 import Product from "./pages/Shop/Product";
+import {CartProvider} from "./pages/Cart/CartContext";
 
 
 
 function App() {
 
     return (
-        <Router>
-            <div className="App">
-                <BottomPanel />
-                <NikeLogo />
-                <Navigation />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/imprint" element={<Imprint />} />
-                    <Route path="/support" element={<Support />} />
-                    <Route path="/tos" element={<Tos />} />
-                    <Route path="/shop/all" element={<ShopAll />} />
-                    <Route path="/shop/men" element={<ShopMen />} />
-                    <Route path="/shop/women" element={<ShopWomen />} />
-                    <Route path="/shop/kids" element={<ShopKids />} />
-                    <Route path="/products/:id" element={<Product />} />
-                </Routes>
-            </div>
-        </Router>
-    );
+        <CartProvider>
+            <Router>
+                <div className="App">
+                    <BottomPanel />
+                    <NikeLogo />
+                    <Navigation />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/imprint" element={<Imprint />} />
+                        <Route path="/support" element={<Support />} />
+                        <Route path="/tos" element={<Tos />} />
+                        <Route path="/shop/all" element={<ShopAll />} />
+                        <Route path="/shop/men" element={<ShopMen />} />
+                        <Route path="/shop/women" element={<ShopWomen />} />
+                        <Route path="/shop/kids" element={<ShopKids />} />
+                        <Route path="/products/:id" element={<Product />} />
+                    </Routes>
+                </div>
+            </Router>
+        </CartProvider>
+        );
 }
 
 export default App;
