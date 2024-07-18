@@ -29,7 +29,7 @@ function Home() {
     return (
         <div>
             <div className="home-content">
-                <h1>THE AIR FORCE 2 BY NIKE</h1>
+                <h1 className={"title-text"}>THE AIR FORCE 2 BY NIKE</h1>
                 <div id="af1">
                     <Canvas camera={{ position: [5, 0, 0], fov: 75 }} style={{ zIndex: 0 }}>
                         <ambientLight color={'black'} intensity={1} />

@@ -33,7 +33,7 @@ function Product() {
 
     return (
         <div>
-            <h1 style={{ top: '75%' }}>{product.name}</h1>
+            <h1 className={'title-text'} style={{ top: '75%' }}>{product.name}</h1>
             <img
                 style={{
                     maxWidth: '30%',

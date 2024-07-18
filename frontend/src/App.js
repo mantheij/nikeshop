@@ -14,6 +14,7 @@ import Support from "./pages/BottomPanel/support";
 import Tos from "./pages/BottomPanel/tos";
 import Product from "./pages/Shop/Product";
 import {CartProvider} from "./pages/Cart/CartContext";
+import Cart from "./pages/Cart/Cart"
 
 
 
@@ -31,6 +32,7 @@ function App() {
                         <Route path="/imprint" element={<Imprint />} />
                         <Route path="/support" element={<Support />} />
                         <Route path="/tos" element={<Tos />} />
+                        <Route path="/cart" element={<Cart />} />
                         <Route path="/shop/all" element={<ShopAll />} />
                         <Route path="/shop/men" element={<ShopMen />} />
                         <Route path="/shop/women" element={<ShopWomen />} />
