@@ -56,7 +56,7 @@ function ProductGrid({ filterFn, title }) {
 
     return (
         <div className="shop-container">
-            <h1>{title}</h1>
+            <h1 className={"title-text"}>{title}</h1>
 
             <div className="grid-container">
                 {filteredProducts.length > 0 ? (

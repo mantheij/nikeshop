@@ -1,7 +1,12 @@
 .cart-title {
-
+    position: absolute;
+    margin: 80px;
+    vertical-align: center;
+    
 }
 
 .cart-text {
-
+    position: relative;
+    margin-left: 300px;
+    vertical-align: center;
 }
