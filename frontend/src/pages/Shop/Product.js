@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useCart } from '../Cart/CartContext';
+import './Product.css'
 
 function Product() {
     const [product, setProduct] = useState(null);
     const [error, setError] = useState(null);
+    const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
-    const { addToCart } = useCart();
 
     const getProductData = async () => {
         try {
@@ -48,9 +48,26 @@ function Product() {
             <p style={{ position: 'absolute', top: '25%', left: '70%' }}>{product.description}</p>
             <p style={{ position: 'absolute', top: '30%', left: '70%' }}>{product.price} $ </p>
             <p style={{ position: 'absolute', top: '35%', left: '70%' }}>In Stock: {product.stock_quantity}</p>
+
+            <div className="quantity-container" style={{ position: 'absolute', top: '38.5%', left: '70%', display: 'flex', alignItems: 'center', gap:'10px' }}>
+                <button 
+                    className={'quantity-button'}
+                    onClick={() => setQuantity(prevQuantity => prevQuantity < product.stock_quantity ? prevQuantity + 1 : product.stock_quantity)}
+                >
+                    +
+                </button>
+                <p className ={'quantity-text'}>{quantity}</p>
+               <button 
+                    className={'quantity-button'}
+                    onClick={() => setQuantity(prevQuantity => prevQuantity > 1 ? prevQuantity - 1 : 1)}
+                >
+                    -
+                </button>
+            </div>
+            
             <button
-                style={{ position: 'absolute', top: '40%', left: '70%' }}
-                onClick={() => addToCart(product)}
+                style={{ position: 'absolute', top: '45%', left: '70%' }}
+               // onClick={() => }
             >
                 ADD TO CART
             </button>
