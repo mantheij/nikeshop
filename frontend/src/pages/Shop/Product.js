@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './Product.css'
+import './Product.css';
+import { useCart } from '../Cart/CartContext';
 
 function Product() {
     const [product, setProduct] = useState(null);
     const [error, setError] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
+    const { addItem } = useCart();
 
     const getProductData = async () => {
         try {
@@ -56,8 +58,8 @@ function Product() {
                 >
                     +
                 </button>
-                <p className ={'quantity-text'}>{quantity}</p>
-               <button 
+                <p className={'quantity-text'}>{quantity}</p>
+                <button 
                     className={'quantity-button'}
                     onClick={() => setQuantity(prevQuantity => prevQuantity > 1 ? prevQuantity - 1 : 1)}
                 >
@@ -67,7 +69,7 @@ function Product() {
             
             <button
                 style={{ position: 'absolute', top: '45%', left: '70%' }}
-               // onClick={() => }
+                onClick={() => addItem(product, quantity)}
             >
                 ADD TO CART
             </button>

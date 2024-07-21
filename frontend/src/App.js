@@ -14,12 +14,14 @@ import Support from "./pages/BottomPanel/support";
 import Tos from "./pages/BottomPanel/tos";
 import Product from "./pages/Shop/Product";
 import Cart from "./pages/Cart/Cart"
+import { CartProvider } from './pages/Cart/CartContext';
 
 
 
 function App() {
 
     return (
+        <CartProvider>
             <Router>
                 <div className="App">
                     <BottomPanel />
@@ -39,6 +41,8 @@ function App() {
                     </Routes>
                 </div>
             </Router>
+        </CartProvider>
+           
         );
 }
 
